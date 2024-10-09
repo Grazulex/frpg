@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b5s1hxuhndxrc"]
+[gd_scene load_steps=29 format=3 uid="uid://b5s1hxuhndxrc"]
 
 [ext_resource type="Texture2D" uid="uid://bajmadi1cdklx" path="res://Player/Sprites/walk.png" id="1_ewd38"]
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_g2v2d"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Player/Scripts/state_axe.gd" id="8_377sv"]
 [ext_resource type="AudioStream" uid="uid://wsj3cj2wq1rt" path="res://Player/Audios/axe.mp3" id="9_83akb"]
 [ext_resource type="Script" path="res://Player/Scripts/PlayerInteractionsHost.gd" id="10_d14a5"]
+[ext_resource type="Script" path="res://Player/Scripts/PlayerCamera.gd" id="10_pvvgu"]
 [ext_resource type="PackedScene" uid="uid://5icdwoynlihv" path="res://GeneralNode/HurtBox/hurt_box.tscn" id="10_y5cya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfrb3"]
@@ -275,7 +276,6 @@ _data = {
 radius = 4.5
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(24, 16)
 collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.174533
@@ -324,6 +324,8 @@ script = ExtResource("8_377sv")
 axe_sound = ExtResource("9_83akb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_limits = true
+script = ExtResource("10_pvvgu")
 
 [node name="Audio" type="Node" parent="."]
 
