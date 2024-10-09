@@ -58,7 +58,9 @@ axe={
 [layer_names]
 
 2d_physics/layer_1="Player"
+2d_physics/layer_2="PlayerHurt"
 2d_physics/layer_5="Hills"
+2d_physics/layer_9="Tree"
 
 [rendering]
 
