@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://5fl2v6t5iev0"]
+
+[ext_resource type="PackedScene" uid="uid://b5s1hxuhndxrc" path="res://Player/player.tscn" id="1_kwbfi"]
+[ext_resource type="PackedScene" uid="uid://cryfgdl6lc0jl" path="res://Tile Maps/grass-01.tscn" id="2_vpjnf"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_kwbfi")]
+
+[node name="Grass-01" parent="." instance=ExtResource("2_vpjnf")]
