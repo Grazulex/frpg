@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5s1hxuhndxrc"]
+[gd_scene load_steps=28 format=3 uid="uid://b5s1hxuhndxrc"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_g2v2d"]
 [ext_resource type="Texture2D" uid="uid://dg6may2fnepou" path="res://Player/Sprites/Premium Charakter Spritesheet.png" id="2_cxq3h"]
+[ext_resource type="Texture2D" uid="uid://bqs3v3636u4s7" path="res://Player/Sprites/Shadow.png" id="3_cmdn6"]
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="4_bgunw"]
 [ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="5_hu720"]
 [ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="6_1wwfh"]
@@ -25,8 +26,8 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
+"update": 0,
+"values": [7]
 }
 
 [sub_resource type="Animation" id="Animation_r407l"]
@@ -263,7 +264,14 @@ position = Vector2(0, -5)
 texture = ExtResource("2_cxq3h")
 hframes = 8
 vframes = 24
-frame = 8
+frame = 7
+
+[node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0.18359, 0.18359, 0.18359, 0.576471)
+show_behind_parent = true
+position = Vector2(1.19209e-07, 9)
+scale = Vector2(0.46875, 0.453125)
+texture = ExtResource("3_cmdn6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

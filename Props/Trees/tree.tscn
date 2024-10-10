@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://c683fds0p2sx2"]
+
+[ext_resource type="Texture2D" uid="uid://847u4gnw4rgv" path="res://Props/Sprites/tree_fall_animation_sprite_sheet.png" id="1_5ljx5"]
+[ext_resource type="Script" path="res://Props/Trees/tree.gd" id="1_d3oul"]
+[ext_resource type="PackedScene" uid="uid://d1pk1vevwh28u" path="res://GeneralNode/HitBox/hit_box.tscn" id="2_4hn65"]
+
+[sub_resource type="Animation" id="Animation_lk4pn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_gwv3c"]
+resource_name = "fall"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lnqh"]
+_data = {
+"RESET": SubResource("Animation_lk4pn"),
+"fall": SubResource("Animation_gwv3c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwnmn"]
+size = Vector2(9, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d3n1"]
+size = Vector2(9, 13)
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_d3oul")
+
+[node name="TreeSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ljx5")
+hframes = 13
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TreeSprite"]
+libraries = {
+"": SubResource("AnimationLibrary_2lnqh")
+}
+
+[node name="HitBox" parent="." instance=ExtResource("2_4hn65")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(7.5, 14)
+shape = SubResource("RectangleShape2D_lwnmn")
+debug_color = Color(0.572259, 0.554813, 0.0351913, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+light_mask = 16
+visibility_layer = 0
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7.5, 12.5)
+shape = SubResource("RectangleShape2D_5d3n1")
+debug_color = Color(0.284334, 0.507616, 0.974762, 0.42)

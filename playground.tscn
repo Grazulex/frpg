@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://5fl2v6t5iev0"]
+[gd_scene load_steps=5 format=3 uid="uid://5fl2v6t5iev0"]
 
 [ext_resource type="PackedScene" uid="uid://b5s1hxuhndxrc" path="res://Player/player.tscn" id="1_kwbfi"]
 [ext_resource type="PackedScene" uid="uid://cryfgdl6lc0jl" path="res://Tile Maps/grass-01.tscn" id="2_vpjnf"]
 [ext_resource type="PackedScene" uid="uid://b66mnwneqia7e" path="res://Props/Plants/plant.tscn" id="3_bidbd"]
+[ext_resource type="PackedScene" uid="uid://c683fds0p2sx2" path="res://Props/Trees/tree.tscn" id="4_m4jbg"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
@@ -43,3 +44,21 @@ position = Vector2(380, -272)
 
 [node name="Plant11" parent="." instance=ExtResource("3_bidbd")]
 position = Vector2(-86, -245)
+
+[node name="Tree" parent="." instance=ExtResource("4_m4jbg")]
+position = Vector2(31, 10)
+
+[node name="Tree5" parent="." instance=ExtResource("4_m4jbg")]
+position = Vector2(-230, -163)
+
+[node name="Tree2" parent="." instance=ExtResource("4_m4jbg")]
+position = Vector2(-78, -7)
+
+[node name="Tree3" parent="." instance=ExtResource("4_m4jbg")]
+position = Vector2(291, 132)
+
+[node name="Tree4" parent="." instance=ExtResource("4_m4jbg")]
+position = Vector2(300, -141)
+
+[node name="Tree6" parent="." instance=ExtResource("4_m4jbg")]
+position = Vector2(315, -328)
