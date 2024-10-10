@@ -12,7 +12,7 @@ y_sort_enabled = true
 [node name="Grass-01" parent="." instance=ExtResource("2_vpjnf")]
 
 [node name="Plant" parent="." instance=ExtResource("3_bidbd")]
-position = Vector2(-96, -63)
+position = Vector2(-9, 28)
 
 [node name="Plant2" parent="." instance=ExtResource("3_bidbd")]
 position = Vector2(103, -20)
@@ -34,3 +34,12 @@ position = Vector2(216, -114)
 
 [node name="Plant8" parent="." instance=ExtResource("3_bidbd")]
 position = Vector2(203, -97)
+
+[node name="Plant9" parent="." instance=ExtResource("3_bidbd")]
+position = Vector2(-41, -335)
+
+[node name="Plant10" parent="." instance=ExtResource("3_bidbd")]
+position = Vector2(380, -272)
+
+[node name="Plant11" parent="." instance=ExtResource("3_bidbd")]
+position = Vector2(-86, -245)
