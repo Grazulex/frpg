@@ -5,9 +5,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 var direction : Vector2 = Vector2.ZERO
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
-@onready var sprite_idle : Sprite2D = $idle
-@onready var sprite_walk : Sprite2D = $walk
-@onready var sprite_axe : Sprite2D = $axe
+@onready var sprite : Sprite2D = $Sprite2D
 @onready var state_machine : PlayerStateMachine = $StateMachine
 
 signal DirectionChanged( new_direction : Vector2 )
