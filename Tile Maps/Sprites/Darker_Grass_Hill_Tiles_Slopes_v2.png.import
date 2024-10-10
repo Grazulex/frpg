@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cby33a7xiyhc1"
-path="res://.godot/imported/grass-01.png-f24414d9f5a0e3a19951c320916dedd9.ctex"
+uid="uid://c2nkoqp736b44"
+path="res://.godot/imported/Darker_Grass_Hill_Tiles_Slopes_v2.png-4333b3b0b79d3b566eaff5e7626a5f75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Maps/Sprites/grass-01.png"
-dest_files=["res://.godot/imported/grass-01.png-f24414d9f5a0e3a19951c320916dedd9.ctex"]
+source_file="res://Tile Maps/Sprites/Darker_Grass_Hill_Tiles_Slopes_v2.png"
+dest_files=["res://.godot/imported/Darker_Grass_Hill_Tiles_Slopes_v2.png-4333b3b0b79d3b566eaff5e7626a5f75.ctex"]
 
 [params]
 

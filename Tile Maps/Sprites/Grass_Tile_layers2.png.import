@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bajmadi1cdklx"
-path="res://.godot/imported/walk.png-0a80a28eb5f7c70ff17b2b775ba72851.ctex"
+uid="uid://bfsg4mxivxeuc"
+path="res://.godot/imported/Grass_Tile_layers2.png-189e807e4b503f7ba343b47962dfdc5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/walk.png"
-dest_files=["res://.godot/imported/walk.png-0a80a28eb5f7c70ff17b2b775ba72851.ctex"]
+source_file="res://Tile Maps/Sprites/Grass_Tile_layers2.png"
+dest_files=["res://.godot/imported/Grass_Tile_layers2.png-189e807e4b503f7ba343b47962dfdc5e.ctex"]
 
 [params]
 

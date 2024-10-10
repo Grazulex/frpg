@@ -4,12 +4,10 @@ class_name State_Idle extends State
 @onready var axe : State = $"../Axe"
 
 func Enter() -> void:
-	player.sprite_idle.show()
 	player.UpdateAnimation("idle")
 	pass
 
 func Exit() -> void:
-	player.sprite_idle.hide()
 	pass
 	
 func Process( _delta : float) -> State:

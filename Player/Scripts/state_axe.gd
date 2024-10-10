@@ -14,7 +14,6 @@ var axing : bool = false
 
 
 func Enter() -> void:
-	player.sprite_axe.show()
 	player.UpdateAnimation("axe")
 	animation_player.animation_finished.connect( EndAxe )
 	
@@ -32,7 +31,6 @@ func Exit() -> void:
 	animation_player.animation_finished.disconnect( EndAxe )
 	axing = false
 	hurt_box.monitoring = false
-	player.sprite_axe.hide()
 	pass
 	
 func Process( _delta : float) -> State:

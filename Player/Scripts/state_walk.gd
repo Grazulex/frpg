@@ -6,12 +6,10 @@ class_name State_Walk extends State
 @onready var axe : State = $"../Axe"
 
 func Enter() -> void:
-	player.sprite_walk.show()
 	player.UpdateAnimation("walk")
 	pass
 
 func Exit() -> void:
-	player.sprite_walk.hide()
 	pass
 	
 func Process( _delta : float) -> State:
