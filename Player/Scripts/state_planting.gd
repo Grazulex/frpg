@@ -1,8 +1,8 @@
-class_name State_Pick extends State
+class_name State_Planting extends State
 
-var picking : bool = false
+var planting : bool = false
 
-@export var pick_sound : AudioStream
+@export var planting_sound : AudioStream
 @export_range(1,20,0.5) var decelarate_speed : float = 5.0
 
 @onready var animation_player : AnimationPlayer = $"../../AnimationPlayer"
@@ -14,29 +14,29 @@ var picking : bool = false
 
 
 func Enter() -> void:
-	player.UpdateAnimation("pick")
-	animation_player.animation_finished.connect( EndPick )
+	player.UpdateAnimation("planting")
+	animation_player.animation_finished.connect( EndPlanting )
 	
-	audio.stream = pick_sound
+	audio.stream = planting_sound
 	audio.pitch_scale = randf_range( 0.9, 1.1 )
 	audio.play()
 	
-	picking = true
+	planting = true
 	
 	await get_tree().create_timer( 0.075 ).timeout
 	#hurt_box.monitoring = true
 	pass
 
 func Exit() -> void:
-	animation_player.animation_finished.disconnect( EndPick )
-	picking = false
+	animation_player.animation_finished.disconnect( EndPlanting )
+	planting = false
 	#hurt_box.monitoring = false
 	pass
 	
 func Process( _delta : float) -> State:
 	player.velocity -= player.velocity * decelarate_speed * _delta
 	
-	if picking == false:
+	if planting == false:
 		if player.direction == Vector2.ZERO:
 			return idle
 		else:
@@ -49,6 +49,6 @@ func Physics( _delta : float) -> State:
 func HandelInput( _event : InputEvent) -> State:
 	return null
 	
-func EndPick( _newAnimName: String ) -> void:
-	picking = false
+func EndPlanting( _newAnimName: String ) -> void:
+	planting = false
 	pass

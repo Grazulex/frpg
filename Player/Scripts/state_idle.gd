@@ -2,8 +2,10 @@ class_name State_Idle extends State
 
 @onready var walk : State = $"../Walk"
 @onready var axe : State = $"../Axe"
-@onready var pick : State = $"../Pick"
+@onready var sickle : State = $"../Sickle"
 @onready var water : State = $"../Water"
+@onready var planting : State = $"../Planting"
+@onready var fishing : State = $"../FishIdle"
 
 
 func Enter() -> void:
@@ -25,8 +27,12 @@ func Physics( _delta : float) -> State:
 func HandelInput( _event : InputEvent) -> State:
 	if _event.is_action_pressed("axe"):
 		return axe
-	if _event.is_action_pressed("pick"):
-		return pick		
+	if _event.is_action_pressed("sickle"):
+		return sickle		
 	if _event.is_action_pressed("water"):
-		return water	
+		return water
+	if _event.is_action_pressed("planting"):
+		return planting		
+	if _event.is_action_pressed("fishing"):
+		return fishing						
 	return null
