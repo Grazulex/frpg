@@ -7,7 +7,6 @@ class_name State_Idle extends State
 @onready var planting : State = $"../Planting"
 @onready var fishing : State = $"../FishIdle"
 
-
 func Enter() -> void:
 	player.UpdateAnimation("idle")
 	pass
