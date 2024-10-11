@@ -4,6 +4,8 @@ class_name State_Walk extends State
 
 @onready var idle : State =  $"../Idle"
 @onready var axe : State = $"../Axe"
+@onready var pick : State = $"../Pick"
+@onready var water : State = $"../Water"
 
 func Enter() -> void:
 	player.UpdateAnimation("walk")
@@ -29,4 +31,8 @@ func Physics( _delta : float) -> State:
 func HandelInput( _event : InputEvent) -> State:
 	if _event.is_action_pressed("axe"):
 		return axe
+	if _event.is_action_pressed("pick"):
+		return pick
+	if _event.is_action_pressed("water"):
+		return water		
 	return null

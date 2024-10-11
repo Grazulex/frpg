@@ -1,11 +1,12 @@
-class_name State_Axe extends State
+class_name State_Water extends State
 
-var axing : bool = false
+var watering : bool = false
 
-@export var axe_sound : AudioStream
+@export var water_sound : AudioStream
 @export_range(1,20,0.5) var decelarate_speed : float = 5.0
 
 @onready var animation_player : AnimationPlayer = $"../../AnimationPlayer"
+@onready var water_anim : AnimationPlayer = $"../../Sprite2D/WaterEffectSprite/AnimationPlayer"
 @onready var audio : AudioStreamPlayer2D  =  $"../../Audio/AudioStreamPlayer2D"
 @onready var hurt_box : HurtBox = $"../../Interactions/HurtBox"
 
@@ -14,29 +15,30 @@ var axing : bool = false
 
 
 func Enter() -> void:
-	player.UpdateAnimation("axe")
-	animation_player.animation_finished.connect( EndAxe )
+	player.UpdateAnimation("water")
+	water_anim.play( "water_" + player.AnimDirection() )
+	animation_player.animation_finished.connect( EndWater )
 	
-	audio.stream = axe_sound
+	audio.stream = water_sound
 	audio.pitch_scale = randf_range( 0.9, 1.1 )
 	audio.play()
 	
-	axing = true
+	watering = true
 	
-	await get_tree().create_timer( 0.5 ).timeout
-	hurt_box.monitoring = true
+	await get_tree().create_timer( 0.075 ).timeout
+	#hurt_box.monitoring = true
 	pass
 
 func Exit() -> void:
-	animation_player.animation_finished.disconnect( EndAxe )
-	axing = false
-	hurt_box.monitoring = false
+	animation_player.animation_finished.disconnect( EndWater )
+	watering = false
+	#hurt_box.monitoring = false
 	pass
 	
 func Process( _delta : float) -> State:
 	player.velocity -= player.velocity * decelarate_speed * _delta
 	
-	if axing == false:
+	if watering == false:
 		if player.direction == Vector2.ZERO:
 			return idle
 		else:
@@ -49,6 +51,6 @@ func Physics( _delta : float) -> State:
 func HandelInput( _event : InputEvent) -> State:
 	return null
 	
-func EndAxe( _newAnimName: String ) -> void:
-	axing = false
+func EndWater( _newAnimName: String ) -> void:
+	watering = false
 	pass

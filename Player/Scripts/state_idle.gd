@@ -2,6 +2,9 @@ class_name State_Idle extends State
 
 @onready var walk : State = $"../Walk"
 @onready var axe : State = $"../Axe"
+@onready var pick : State = $"../Pick"
+@onready var water : State = $"../Water"
+
 
 func Enter() -> void:
 	player.UpdateAnimation("idle")
@@ -9,7 +12,7 @@ func Enter() -> void:
 
 func Exit() -> void:
 	pass
-	
+
 func Process( _delta : float) -> State:
 	if player.direction != Vector2.ZERO:
 		return walk
@@ -22,4 +25,8 @@ func Physics( _delta : float) -> State:
 func HandelInput( _event : InputEvent) -> State:
 	if _event.is_action_pressed("axe"):
 		return axe
+	if _event.is_action_pressed("pick"):
+		return pick		
+	if _event.is_action_pressed("water"):
+		return water	
 	return null

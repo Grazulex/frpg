@@ -1,8 +1,8 @@
-class_name State_Axe extends State
+class_name State_Pick extends State
 
-var axing : bool = false
+var picking : bool = false
 
-@export var axe_sound : AudioStream
+@export var pick_sound : AudioStream
 @export_range(1,20,0.5) var decelarate_speed : float = 5.0
 
 @onready var animation_player : AnimationPlayer = $"../../AnimationPlayer"
@@ -14,29 +14,29 @@ var axing : bool = false
 
 
 func Enter() -> void:
-	player.UpdateAnimation("axe")
-	animation_player.animation_finished.connect( EndAxe )
+	player.UpdateAnimation("pick")
+	animation_player.animation_finished.connect( EndPick )
 	
-	audio.stream = axe_sound
+	audio.stream = pick_sound
 	audio.pitch_scale = randf_range( 0.9, 1.1 )
 	audio.play()
 	
-	axing = true
+	picking = true
 	
-	await get_tree().create_timer( 0.5 ).timeout
-	hurt_box.monitoring = true
+	await get_tree().create_timer( 0.075 ).timeout
+	#hurt_box.monitoring = true
 	pass
 
 func Exit() -> void:
-	animation_player.animation_finished.disconnect( EndAxe )
-	axing = false
-	hurt_box.monitoring = false
+	animation_player.animation_finished.disconnect( EndPick )
+	picking = false
+	#hurt_box.monitoring = false
 	pass
 	
 func Process( _delta : float) -> State:
 	player.velocity -= player.velocity * decelarate_speed * _delta
 	
-	if axing == false:
+	if picking == false:
 		if player.direction == Vector2.ZERO:
 			return idle
 		else:
@@ -49,6 +49,6 @@ func Physics( _delta : float) -> State:
 func HandelInput( _event : InputEvent) -> State:
 	return null
 	
-func EndAxe( _newAnimName: String ) -> void:
-	axing = false
+func EndPick( _newAnimName: String ) -> void:
+	picking = false
 	pass
