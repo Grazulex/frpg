@@ -695,6 +695,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [48, 49, 50, 51, 52, 53, 54, 55]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}],
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ock5v"]
 resource_name = "walk_left"
@@ -712,6 +731,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [40, 41, 42, 43, 44, 45, 46, 47]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}],
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_gxqw2"]
 resource_name = "walk_right"
@@ -729,6 +767,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [32, 33, 34, 35, 36, 37, 38, 39]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}],
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_xv7jy"]
 resource_name = "walk_up"
@@ -746,6 +803,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [56, 57, 58, 59, 60, 61, 62, 63]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pymak")
+}],
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_sdlom"]
 resource_name = "water_down"
