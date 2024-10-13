@@ -54,3 +54,4 @@ func AnimDirection() -> String:
 		return "left"
 	else:
 		return "right"
+		

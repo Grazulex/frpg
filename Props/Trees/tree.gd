@@ -1,5 +1,7 @@
 class_name Treee extends Node2D
 
+@export var stock_value : int = 5
+
 var total_damage: int = 0
 @export var total_damage_to_dead : int = 3
 
